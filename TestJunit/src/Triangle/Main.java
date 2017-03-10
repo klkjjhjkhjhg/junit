@@ -18,7 +18,7 @@ public class Main {
 				|| a-b>=c || a-c >= b || b-c >= a){
 				int m=a/0;
 		}
-		else if((a==b && b!=c) || (a!=b && b==c)){
+		else if((a==b && b!=c) || (a!=b && b==c) || (a==c && a!=b)){
 			result = 1;
 		}
 	}
