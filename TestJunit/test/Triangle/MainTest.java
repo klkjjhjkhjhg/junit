@@ -15,6 +15,7 @@ public class MainTest {
 	
 	@Before
     public void setUp() throws Exception {
+		mainTest.reSet();
     }
 
     @After
@@ -23,19 +24,19 @@ public class MainTest {
 
     @Test(timeout=1000)
     public void testequilateral() {
-    	mainTest.triangle(1, 1, 1);
+    	mainTest.equilateral(1, 1, 1);
         assertEquals(0, mainTest.getResult());
     }
 
     @Test
     public void testisosceles() {
-        mainTest.triangle(1, 1, 2);
+        mainTest.isosceles(1, 2, 2);
         assertEquals(1,mainTest.getResult());
     }
 
     @Test
     public void testscalene() {
-        mainTest.triangle(3, 1, 2);
+        mainTest.scalene(3, 4, 2);
         assertEquals(2,mainTest.getResult());
     }
 
@@ -46,7 +47,7 @@ public class MainTest {
 
     @Test(expected =ArithmeticException.class)
     public void testZero() {
-        mainTest.triangle(0, 1, 2);
+        mainTest.scalene(5, 1, 2);
         assertEquals(2,mainTest.getResult());
     }
 }
